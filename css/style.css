@@ -46,6 +46,9 @@ body {
     font-size: 16px;
     font-weight: 500;
 }
+.item3 a:hover {
+    color: #4888FF;
+}
 
 
 .header {
@@ -58,6 +61,7 @@ body {
     position: sticky;
     top: 0;
     background-color: white;
+    align-items: center;
 }
 .container {
     display: flex;
@@ -253,6 +257,25 @@ body {
     background-color: #F4F4F4;
     height: 48px;
     gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.navbar-item:hover {
+    color: #4888FF;
+}
+.navbar-item:hover .navbar-item-svg path {
+    fill: #0056f7;
+    /* fill: red; */
+}
+.navbar-item-btn:hover {
+    background-color: #4888FF;
+    cursor: pointer;
+}
+.navbar-item-btn:hover path {
+    stroke: #ffffff;
+}
+.navbar-item-btn:hover span {
+    color: #ffffff;
 }
 
 
@@ -328,6 +351,8 @@ body {
     padding: 30px 0;
     background-color: #FFFFFF;
     width: 60%;
+    height: auto;
+    min-height: 440px;
     opacity: 0;
     pointer-events: none;
     border-radius: 8px;
@@ -378,9 +403,31 @@ body {
 .menu-content-item {
     width: 50%;
     height: 100%;
-    background-color: red;
 }
 .menu-title {
     font-size: 2rem;
     color: #343A3F;
+}
+.menu-content-item ul li {
+    list-style: none;
+}
+.menu-content-item li {
+    padding-bottom: 3%;
+    cursor: pointer;
+}
+.menu-content-item li:hover {
+    color: #4888FF;
+}
+.menu-content-item-smart {
+    display: flex;
+    flex-direction: row;
+}
+.menu-content-item span {
+    opacity: 0.5;
+}
+.menu-content-item li:hover span {
+    opacity: 1;
+}
+.menu-content-item li:hover path {
+    stroke: #4888FF;
 }
