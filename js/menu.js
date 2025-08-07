@@ -4,11 +4,25 @@ const items = document.querySelectorAll('.menu-item');
 const contents = document.querySelectorAll('.menu-content');
 const fixed = document.querySelector('.header-top');
 
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 40) {
-        fixed.classList.add('show');
-    }   else {
-        fixed.classList.remove('show');
+let scrollHandler = null; 
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1200) {
+        if (!scrollHandler) {
+            scrollHandler = () => {
+                if (window.scrollY > 40) {
+                    fixed.classList.add('show');
+                } else {
+                    fixed.classList.remove('show');
+                }
+            };
+            window.addEventListener('scroll', scrollHandler);
+        }
+    } else {
+        if (scrollHandler) {
+            window.removeEventListener('scroll', scrollHandler);
+            scrollHandler = null;
+        }
     }
 });
 

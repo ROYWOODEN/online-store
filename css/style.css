@@ -52,7 +52,10 @@ body {
 }
 
 
-.header {
+/* .header {
+
+} */
+.header-desktop {
     padding-top: 16px;
     width: 100%;
     display: grid;
@@ -61,6 +64,9 @@ body {
     grid-row-gap: 10px;
     background-color: white;
     align-items: center;
+}
+.header-mobile {
+    display: none;
 }
 .header-top {
     display: none;
@@ -72,12 +78,9 @@ body {
     padding: 16px 0px;
     flex-direction: row;
     align-items: center;
-    opacity: 0;
-    transition: 0.2s;
 }
 .header-top.show {
     display: flex;
-    opacity: 1;
 }
 .header__item1 {
     width: 100%;
