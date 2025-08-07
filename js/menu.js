@@ -1,15 +1,26 @@
-const hamb = document.querySelector('#hamb');
+const hamb = document.querySelectorAll('.hamb');
 const menu = document.querySelector('#hamb-menu');
 const items = document.querySelectorAll('.menu-item');
 const contents = document.querySelectorAll('.menu-content');
+const fixed = document.querySelector('.header-top');
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 40) {
+        fixed.classList.add('show');
+    }   else {
+        fixed.classList.remove('show');
+    }
+});
 
 let isOpen = false;
 
-hamb.addEventListener('click', toggle);
+hamb.forEach(el => el.addEventListener('click', toggle));
+
+
 
 
 document.addEventListener('click', function(e) {
-    if (isOpen && !hamb.contains(e.target) && !menu.contains(e.target)) {
+    if (isOpen && ![...hamb].some(el => el.contains(e.target)) && !menu.contains(e.target)) {
         toggle();
     }
 });
