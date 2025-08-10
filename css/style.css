@@ -10,6 +10,9 @@ body {
     font-family: Maza;
     font-weight: 500;
 }
+.no-scroll {
+    overflow: hidden;
+}
 
 .top-contacts {
     display: flex;

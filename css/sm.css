@@ -7,6 +7,12 @@
     }
     .header-mobile {
         display: block;
+        position: fixed;
+        z-index: 300;
+        background-color: #ffffff;
+        width: 100%;
+        /* padding-bottom: 4%; */
+        height: 220px;
     }
     .header-mobile__top-contacts {
         display: flex;
@@ -22,41 +28,89 @@
     .header-mobile__menu {
         align-items: center;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 100%;
     }
     .header-mobile__menu-item1 {
         display: flex;
         align-items: center;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
     .hamb {
         background-color: #4888FF;
-        padding: 14px 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 50px;          
+        height: 50px;    
         border-radius: 8px;
+        justify-content: center;
         cursor: pointer;
-        margin-left: 1%;
+        position: relative;   
+        padding: 30px;
+        margin: 0;  
+        gap: 0;
     }
+    
     .hamb span {
-        width: 40px;
-        height: 3px;
+        position: absolute;  
+        left: 13px;           
+        width: 35px;          
+        height: 2px;
+        background: white;
+        transition: all 0.6s ease;
     }
-    /* .hamb span:nth-child(1) {
-    } */
+    .hamb span:nth-child(1) {
+        top: 20px;
+    }
     .hamb span:nth-child(2) {
-        width: 30px;
+        top: 28px;
+        width: 20px;
     }
-    /* .hamb span:nth-child(3) {
-    } */
+    .hamb span:nth-child(3) {
+        top: 37px;
+    }
+    .active-hamb {
+        background-color: #E8E8E8;
+    }
+    .active-hamb span {
+        background: #343A3F;
+    }
+    .active-hamb span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 28px;
+    }
+    .active-hamb span:nth-child(2) {
+        opacity: 0;
+    }
+    .active-hamb span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 28px;
+    }
+    .hamb-menu-mobile {
+        background-color: #ffffff;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        overflow-y: auto;
+        max-height: 80vh;
+        left: 0;
+        z-index: 300;
+        opacity: 0.1;
+        transition: 0.7s;
+    }
+    .open {
+        top: 219px;
+        opacity: 1;
+    }
+
     .header-mobile__menu-item2 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+    .header__logo {
+        padding-left: 0;
     }
     .header-mobile-item {
         display: flex;
@@ -75,5 +129,68 @@
         top: 5px;
         right: 5px;
         padding: 11px 20px;
+    }
+    .main-container {
+        padding-top: 220px;
+        margin-top: 0;
+        position: relative;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(90deg, #672870 0%, #4FE0FF 100%);
+        overflow: hidden;
+        z-index: 1;
+        padding-bottom: 50%;
+    }
+    .main-img {
+        position: absolute;
+        top: 50%;
+        right: -21%;
+        width: 80%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    
+    .main-content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+    }
+    .main-title {
+        padding-top: 10%;
+        text-align: start;
+        width: 100%;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        padding-left: 4%;
+        font-family: "Tenor Sans";
+        font-weight: 400;
+        font-style: normal;
+    }
+    .main-text {
+        text-align: start;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        padding: 2% 4%;
+        font-family: "Tenor Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .main-button {
+        padding-left: 4%;    
+    }
+    
+    .main-button button {
+        background-color: #fff;
+        color: #672870;
+        font-size: 1.4rem;
+        border-radius: 8px;
+        border: none;
+        padding: 10px 26px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: Maza;
     }
 }

@@ -3,6 +3,8 @@ const menu = document.querySelector('#hamb-menu');
 const items = document.querySelectorAll('.menu-item');
 const contents = document.querySelectorAll('.menu-content');
 const fixed = document.querySelector('.header-top');
+const MobileMenu = document.querySelector('#hamb-menu-mobile');
+const MobileHamb = document.querySelector('#mobile-hamb');
 
 let scrollHandler = null; 
 
@@ -41,10 +43,25 @@ document.addEventListener('click', function(e) {
 
 function toggle() {
     isOpen = !isOpen;
-    if(isOpen) {
-        menu.classList.add('active');
+    if(innerWidth >= 1200) {
+        if(isOpen) {
+            menu.classList.add('active');
+        }   else {
+            menu.classList.remove('active');
+        }
     }   else {
-        menu.classList.remove('active');
+        if(isOpen) {
+            MobileMenu.classList.add('open');
+            MobileHamb.classList.add('active-hamb');
+            document.querySelector('body').style.overflow = 'hidden';
+            // document.querySelector('body').classList.add('no-scroll');
+        }   else {
+            MobileMenu.classList.remove('open');
+            MobileHamb.classList.remove('active-hamb')
+            document.querySelector('body').style.overflow = '';
+            // document.querySelector('body').classList.remove('no-scroll');
+        }
+
     }
 }
 
