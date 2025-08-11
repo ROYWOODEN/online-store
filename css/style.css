@@ -10,6 +10,9 @@ body {
     font-family: Maza;
     font-weight: 500;
 }
+.no-scroll {
+    overflow: hidden;
+}
 
 .top-contacts {
     display: flex;
@@ -17,6 +20,7 @@ body {
     justify-content: space-between;
     background-color: #F4F4F4;
     padding: 8px 40px;
+    height: 40px;
 }
 .item1 {
     display: flex;
@@ -51,41 +55,56 @@ body {
 }
 
 
-.header {
+/* .header {
+
+} */
+.header-desktop {
     padding-top: 16px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    z-index: 150;
-    height: 150px;
-    position: sticky;
-    top: 0;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: auto auto;
+    grid-row-gap: 10px;
     background-color: white;
     align-items: center;
 }
-.container {
-    display: flex;
-    width: 90%;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+.header-mobile {
+    display: none;
 }
-
+.header-top {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 200;
+    padding: 16px 0px;
+    flex-direction: row;
+    align-items: center;
+}
+.header-top.show {
+    display: flex;
+}
 .header__item1 {
-    width: 98%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 35px;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
 }
 .header__item2 {
-    width: 98%;
-    padding-left: 35px;
+    width: 100%;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    padding-right: 35px;
 }
 
 
 .header__logo {
     padding-left: 45px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
 }
 
 .hamb {
@@ -97,6 +116,7 @@ body {
     border-radius: 8px;
     gap: 6px;
     cursor: pointer;
+    margin-left: 1%;
 }
 .hamb span {
     display: block;
@@ -116,7 +136,7 @@ body {
 .header-search {
     padding-left: 80px;
     position: relative;
-    width: 50%;
+    width: 47%;
 }
 .header-search input {
     width: 100%;
@@ -342,11 +362,11 @@ body {
 }
 
 .hamb-menu {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: row;
     z-index: 200;
-    top: 100%;
+    top: 26%;
     left: 12%;
     padding: 30px 0;
     background-color: #FFFFFF;
