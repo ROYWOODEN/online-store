@@ -199,6 +199,34 @@
         border-bottom: 3px solid #E8E8E8;
         padding: 1%;
     }
+    .menu-mobile-content {
+        background-color: #ffffff;
+        position: fixed;
+        /* width: 100vw; */
+        height: calc(100vh - 219px);
+        bottom: 0;
+        right: -100%;
+        overflow-y: auto;
+        z-index: 310;
+        opacity: 0.1;
+        transition: all 0.7s ease;
+    }
+    .open-content {
+        opacity: 1;
+        right: 0;
+        left: 0;
+    }
+    .prev {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.3rem;
+        gap: 20px;
+        padding-left: 2%;
+        padding-bottom: 3%;
+        width: 100%;
+        cursor: pointer;
+    }
     .main-container {
         padding-top: 220px;
         margin-top: 0;
