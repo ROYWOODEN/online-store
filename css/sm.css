@@ -89,10 +89,9 @@
         background-color: #ffffff;
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 220px);
         top: -100%;
         overflow-y: auto;
-        max-height: 80vh;
         left: 0;
         z-index: 300;
         opacity: 0.1;
@@ -129,6 +128,76 @@
         top: 5px;
         right: 5px;
         padding: 11px 20px;
+    }
+    .menu-mobile-item1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .item1 {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        width: 70%;
+    }
+    .item2 {
+        float: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        width: 30%;
+        height: auto;
+    }
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        margin-left: 0;
+        background-color: rgba(244, 244, 244, 1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .menu-mobile-item2 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 14px;
+    }
+    .menu-mobile-navbar {
+        background-color: #F4F4F4;
+        display: flex;
+        flex-direction: row;
+        padding: 14px 14px;
+        align-items: center;
+        gap: 20px;
+        border-radius: 8px;
+        width: 95%;
+        margin: 6px auto;
+        cursor: pointer;
+    }
+    .navbar-item {
+        justify-content: center;
+        width: 95%;
+        gap: 20px;
+        color: #4888FF;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .bottom-contact {
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+        margin-top: 2%;
+    }
+    .bottom-contact span {
+        border-bottom: 3px solid #E8E8E8;
+        padding: 1%;
     }
     .main-container {
         padding-top: 220px;
